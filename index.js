@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
+const port = process.env.PORT
 const { errorHandler } = require('./middleware/errorMiddleware');
 
 mongoose.connect(mongoString);
@@ -31,6 +32,6 @@ app.use("/api/users", require('./routes/usersRoutes'));
 
 app.use(errorHandler);
 
-app.listen(4200, ()=>{
-    console.log(`Server Listening on Port ${4200}`)
+app.listen(port || 4200, ()=>{
+    console.log(`Server Listening on Port ${port || 4200}`)
 })
