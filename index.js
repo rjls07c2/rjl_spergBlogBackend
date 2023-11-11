@@ -22,7 +22,7 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    origin: "https://rjl-spergblogsite-fc6b72a652bd.herokuapp.com/",
+    origin: "https://rjl-spergblogsite-fc6b72a652bd.herokuapp.com",
   }));
 
 app.use(express.json());
